@@ -11,7 +11,7 @@ The Farm Management System Angular App serves as a management tool for farms wit
 
 4. `Search Farms` : The application provides a search functionality that enables users to search for specific farms based on criteria such as the farm's name or location. This helps users quickly find the farms they are looking for within the system.
 
-5. `View Single Farm Details` : Users can select a specific farm from the list and view detailed information about that farm, including its location and the employees associated with it. This feature provides a comprehensive view of a particular farm's data.
+5. `View Single Farm Details` : Users can select a specific farm from the list and view detailed information about that farm, including its location and user can manage the operation of this farm like delete farm or update it. This feature provides a comprehensive view of a particular farm's data.
 
 ## Application Routes and Features
 The below table provides an overview of the various routes and their corresponding features within the application. It outlines the URLs that can be accessed and describes the functionality available on each route. This information serves as a guide for navigating through the application and understanding the features offered by each route.
@@ -38,7 +38,7 @@ The below table provides an overview of the various routes and their correspondi
 - HTML
 - CSS
 - Heroku
-- 
+  
 ## Installation
 To run the development server, follow these steps:
 

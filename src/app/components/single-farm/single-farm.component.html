@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<!--  Hero Section -->
+<section id="hero" class="d-flex align-items-center" [@fadeIn]>
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <div class="hero-image">
+      <img src=".\assets\my-farm.png" alt="Farm" />
+    </div>
+    <div class="hero-content">
+      <h1>{{ farm.name }}</h1>
+      <p>Street: {{ farm.location.street }}</p>
+      <p>City: {{ farm.location.city }}</p>
+      <p>Country: {{ farm.location.country }}</p>
+      <p>Latitude: {{ farm.location.latitude }}</p>
+      <p>Longitude: {{ farm.location.longitude }}</p>
+      <div class="icon-group">
+        <button
+          mat-icon-button
+          matTooltip="Back to your farms"
+          class="goback"
+          [routerLink]="['/farms']"
+        >
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Delete this farm"
+          class="delete"
+          (click)="deleteFarm()"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Update this farm"
+          class="update"
+          [routerLink]="['/farms', farm.id, 'edit']"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--<app-employees [farmId]="farm.id" [employeeList]="farm.employees"></app-employees>-->

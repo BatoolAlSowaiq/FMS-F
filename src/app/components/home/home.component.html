@@ -1,0 +1,78 @@
+<nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="navbar-brand"
+    >
+      <img id="logo" src=".\assets\logo.png" alt="Farm Management Logo" />
+    </a>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          aria-current="page"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
+          <mat-icon matTooltip="Home" class="nav-icon">home</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+        >
+          <mat-icon class="nav-icon" matTooltip="Contact Us">mail</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+        >
+          <mat-icon class="nav-icon" matTooltip="Sign Up">person_add</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+        >
+          <mat-icon class="nav-icon" matTooltip="Log In">login</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main class="container">
+  <!--  Hero Section -->
+  <section id="hero" class="d-flex align-items-center" [@fadeIn]>
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <div class="hero-image">
+        <img src="./assets/background-2.png" alt="Main Image" />
+      </div>
+      <div class="hero-content">
+        <h1>Welcome to <span>Farm Management System</span></h1>
+        <h2>Your Complete Farm Management Solution</h2>
+        <a class="btn-get-started scrollto" routerLink="/farms">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <!-- About section-->
+  <section class="container about-section">
+    <h2>With our app you can</h2>
+    <div class="about-content">
+      <div *ngFor="let slide of slides">
+        <div class="slide">
+          <div class="slide-image">
+            <img [src]="slide.image" [alt]="slide.description" />
+          </div>
+          <div class="slide-description">
+            <h2>{{ slide.description }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  

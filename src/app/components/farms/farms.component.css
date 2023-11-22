@@ -1,0 +1,122 @@
+main {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.my-farms {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #ebebeb;
+    border-bottom: 2px solid hsl(47, 100%, 50%);
+    margin-bottom: 30px;
+}
+
+.search-area {
+    display: flex;
+}
+
+.search-area button {
+    border: none;
+    background-color: #ebebeb;
+    color: gray;
+}
+
+input {
+    margin-top: 10px;
+    background-color: #ebebeb;
+    border: none;
+    height: 30px;
+}
+
+/* farm list */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.grid-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.grid-item {
+    cursor: pointer;
+    flex: 1;
+}
+
+/* farm card */
+mat-card {
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-bottom: 4px solid hsl(47, 100%, 50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s;
+}
+
+mat-card:hover {
+    background: hsl(47, 100%, 50%);
+    color: white;
+    border-bottom: 4px solid white;
+}
+
+mat-card:hover mat-icon {
+    color: white;
+    transition: color 0.5s;
+}
+
+mat-card mat-icon {
+    color: hsl(47, 100%, 50%);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    background-color: #ebebeb;
+    color: gray;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    color: hsl(47, 100%, 50%);
+    font-weight: bold;
+}
+
+/* no farm */
+.no-farm {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-farm img {
+    width: 400px;
+    height: auto;
+}
+
+.no-farm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-farm div a {
+    text-decoration: none;
+    color: black;
+    background-color: hsl(47, 100%, 50%);
+    border-radius: 5px;
+    padding: 9px;
+}

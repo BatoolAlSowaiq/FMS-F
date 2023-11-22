@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<main>
+  <div>
+    <!-- Toolbar section -->
+    <div class="my-farms">
+      <h1>My Farms</h1>
+      <div class="search-area">
+        <button
+          *ngIf="!isSearchVisible"
+          mat-icon-button
+          class="search-icon"
+          matTooltip="Search for farm"
+          aria-label="search icon-button"
+          (click)="toggleSearch()"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
+        <div *ngIf="isSearchVisible" class="search-area search-field">
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="query"
+            (input)="searchInput$.next(query)"
+            placeholder="Search for farm"
+          />
+          <button
+            mat-icon-button
+            id="close-icon"
+            matTooltip="Close search field"
+            aria-label="close icon-button"
+            (click)="toggleSearch()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Farms section-->
+    <div class="container">
+      <div class="grid-container">
+        <a
+          [routerLink]="['/farms', farm.id]"
+          class="grid-item"
+          *ngFor="
+            let farm of farms
+              | paginate : { itemsPerPage: pageSize, currentPage: pageIndex }
+          "
+        >
+          <mat-card>
+            <div><mat-icon>house</mat-icon></div>
+            <mat-card-title>{{ farm.name }}</mat-card-title>
+            <mat-card-content>
+              <p>{{ farm.location.city }}, {{ farm.location.country }}</p>
+            </mat-card-content>
+          </mat-card>
+        </a>
+      </div>
+    </div>
+
+    <!-- Error section -->
+    <div *ngIf="farms.length === 0" class="no-farm">
+      <img src=".\assets\not_found.jpg" alt="" />
+      <div>
+        <h2>No Farm found</h2>
+      </div>
+    </div>
+  </div>
+  <!-- Paginator section -->
+  <div *ngIf="farms.length !== 0" class="pagination">
+    <pagination-controls
+      (pageChange)="onPageChange($event)"
+    ></pagination-controls>
+  </div>
+</main>

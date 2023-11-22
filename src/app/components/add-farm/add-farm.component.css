@@ -1,0 +1,25 @@
+.container {
+  background: #ebebeb;
+  margin-top: 80px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container button {
+  width: auto;
+  background-color: hsl(47, 100%, 50%);
+  border-color: hsl(47, 100%, 50%);
+  border-radius: 5px;
+}
+
+mat-form-field {
+  width: 50%;
+}
+
+.error-msg {
+  color: red;
+}

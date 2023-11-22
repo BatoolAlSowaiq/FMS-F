@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h1>Create New Farm</h1>
+
+  <form (ngSubmit)="createFarm()" [formGroup]="createFarmForm">
+    <mat-form-field>
+      <mat-label>Farm Name:</mat-label>
+      <input matInput type="text" formControlName="name" />
+      <mat-error *ngIf="nameInput.invalid && nameInput.touched">
+        Farm's name is <strong>required</strong>.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Farm's Street:</mat-label>
+      <input matInput type="text" formControlName="street" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Farm's City:</mat-label>
+      <input matInput type="text" formControlName="city" />
+      <mat-error *ngIf="cityInput.invalid && cityInput.touched">
+        Farm's city is <strong>required</strong>.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Farm's Country:</mat-label>
+      <input matInput type="text" formControlName="country" />
+      <mat-error *ngIf="countryInput.invalid && countryInput.touched">
+        Farm's country is <strong>required</strong>.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Latitude:</mat-label>
+      <input matInput type="number" formControlName="latitude" />
+      <mat-error *ngIf="latitudeInput.invalid && latitudeInput.touched">
+        Latitude <strong>must</strong> be between -90.0 and 90.0.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field>
+      <mat-label>Latitude:</mat-label>
+      <input matInput type="number" formControlName="longitude" />
+      <mat-error *ngIf="longitudeInput.invalid && longitudeInput.touched">
+        Longitude <strong>must</strong> be between -180.0 and 180.0.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <br />
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button
+        class="btn"
+        type="submit"
+        [disabled]="createFarmForm.invalid"
+        mat-raised-button
+      >
+        Create Farm
+      </button>
+      <button class="btn" mat-raised-button [routerLink]="['/farms']">
+        Back
+      </button>
+    </div>
+  </form>
+</div>

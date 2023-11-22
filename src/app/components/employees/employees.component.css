@@ -1,0 +1,55 @@
+.main {
+    padding: 20px 20px 45px 20px;
+}
+
+.mat-toolbar {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+}
+#close-icon{
+    color :red;
+}
+.mat-toolbar button{
+    border: none;
+    background-color: white;
+    color: green;
+}
+.spacer {
+    flex: 1;
+}
+.add-farm-button {
+    margin-left: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+mat-card {
+    height: 270px;
+    padding: 10px;
+}
+mat-card img {
+    height: 150px;
+}
+.grid-item {
+    cursor: pointer;
+    flex: 1;
+}
+
+.no-farms {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

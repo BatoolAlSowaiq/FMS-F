@@ -1,0 +1,44 @@
+<nav class="navbar fixed-top">
+    <div class="container-fluid">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        class="navbar-brand"
+      >
+        <img id="logo" src=".\assets\logo.png" alt="Freelance Logo" />
+      </a>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/farms"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <mat-icon matTooltip="Home" class="nav-icon">home</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+          class="nav-link"
+          aria-current="page"
+          routerLink="/farms/add"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          matTooltip="Add new farm"
+        >
+          <mat-icon class="nav-icon">add</mat-icon>
+          <mat-icon class="nav-icon">house</mat-icon>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+          >
+            <mat-icon class="nav-icon" matTooltip="Log Out">logout</mat-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
